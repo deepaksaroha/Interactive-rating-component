@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Interactive rating component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Overpass&display=swap");
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        margin: 0;
+      }
+
+      body{
+        margin: 0;
+      }
+
+      .main{
+        background-color: hsl(216, 12%, 8%);
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .user-form {
+        display: block;
+      }
+
+      .result {
+        display: none;
+      }
+
+      .main-container {
+        border-radius: 25px;
+        padding: 35px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 325px;
+        width: 325px;
+        font-family: "Overpass", sans-serif;
+        background-color: hsl(213, 19%, 18%);
+      }
+
+      .main-header {
+        color: white;
+        font-weight: 700;
+      }
+
+      .main-para {
+        font-size: 15px;
+        color: hsl(217, 12%, 63%);
+      }
+
+      .flex-items {
+        width: 100%;
+      }
+
+      .circle-box {
+        border-radius: 50%;
+        padding: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 2px;
+        width: 2px;
+        background-color: hsla(212, 7%, 48%, 0.1);
+        color: hsl(217, 12%, 63%);
+        font-size: 12px;
+      }
+
+      .option-flex-box {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .btn {
+        border-radius: 25px;
+        padding: 15px;
+        border: none;
+        background-color: hsl(25, 97%, 53%);
+        color: white;
+        font-weight: 700;
+      }
+      .btn:hover {
+        color: hsl(25, 97%, 53%);
+        background-color: white;
+      }
+
+      .selected-rating {
+        background-color: hsl(217, 12%, 63%);
+        color: white;
+      }
+
+      .options:hover {
+        background-color: hsl(25, 97%, 53%);
+        color: white;
+      }
+
+      .flex-items-second{
+        align-items: center;
+        text-align: center;
+        padding: 35px;
+      }
+
+      #illu{
+        height: auto;
+        width: 150px;
+      }
+
+      .selection-msg{
+        font-size: 0.8em;
+        color: hsl(25, 97%, 53%);
+        border-radius: 15px;
+        background-color: hsl(225, 4%, 26%);
+        padding: 4px 12px;
+      }
+
+      .thankyou{
+        font-size: 28px;
+        color: white;
+      }
+
+      #res{
+        display: none;
+      }
+
+      @media screen and (max-width: 375px){
+        .main-container {
+          height: 30px;
+          width: 300px;
+        }
+      }
+    </style>
+    <script src="./index.js"></script>
+  </head>
+  <body>
+    <!-- ui code -->
+    <main class="main">
+      <div id="uf" class="user-form">
+        <div class="main-container">
+          <div class="flex-items">
+            <div class="circle-box">
+              <img
+                class="circle-enclosed"
+                src="./images/icon-star.svg"
+                alt="star icon"
+              />
+            </div>
+          </div>
+          <h3 class="flex-items main-header">How did we do?</h3>
+          <p class="flex-items main-para">
+            Please let us know how we did with your support request. All
+            feedback is appreciated to help us improve our offering!
+          </p>
+          <div class="flex-items option-flex-box">
+            <div class="circle-box options" id="1">1</div>
+            <div class="circle-box options" id="2">2</div>
+            <div class="circle-box options" id="3">3</div>
+            <div class="circle-box options" id="4">4</div>
+            <div class="circle-box options" id="5">5</div>
+          </div>
+          <button class="flex-items btn">SUBMIT</button>
+        </div>
+      </div>
+
+      <div id="res" class="">
+        <div class="main-container flex-items-second">
+          <img class="flex-items1" id="illu" src="./images/illustration-thank-you.svg" alt="thank you illustration">
+          <p class="selection-msg">
+            You selected <span id="my-rating"></span> out of 5
+          </p>
+          <p class="thankyou">
+            Thank you!
+          </p>
+          <p class="flex-items1 main-para">
+            We appreciate you taking the time to give a rating. If you ever need more support, 
+  don’t hesitate to get in touch!
+          </p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
